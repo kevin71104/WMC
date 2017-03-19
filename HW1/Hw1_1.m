@@ -1,5 +1,5 @@
 % Introduction to Wireless and Mobile Networking : Hw1-1
-% Radio Propagation model : P_R = P_T * G_T * G_C * G_R 
+% Radio Propagation model : P_R = P_T * G_T * G_C * G_R
 % Path-Loss model only :  G_C = two-ray-ground model
 clear;
 clc;
@@ -36,7 +36,7 @@ Interference = 0;
 P_R = fromdB(P_R_dB);
 SINR = mySINR_dB(P_R, Interference, Noise);
 figure
-plot(d, SINR,'linewidth',2), 
+plot(d, SINR,'linewidth',2),
 xlabel('distance(m)'), ylabel( 'SINR(dB)'),
 title('Figure 1-2'),
 axis([0,2000,60,220]),

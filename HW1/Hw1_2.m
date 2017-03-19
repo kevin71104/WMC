@@ -1,5 +1,5 @@
 % Introduction to Wireless and Mobile Networking : Hw1-2
-% Radio Propagation model : P_R = P_T * G_T * G_C * G_R 
+% Radio Propagation model : P_R = P_T * G_T * G_C * G_R
 % Path-Loss: two-ray-ground model
 % Shadowing: log-normal model
 clear;
@@ -26,15 +26,16 @@ P_R_dB = P_T + G_T_dB + G_R_dB + G_C_dB + S;
 
 %% Plot Figure 2-1 P_R to d
 figure
-plot(d, P_R_dB,'linewidth',1), 
+plot(d, P_R_dB,'linewidth',1),
 xlabel('distance(m)'), ylabel( 'Received Power(dB)'),
 title('Figure 2-1')
+
 %% Plot Figure 2-2 SINR to d
 Noise = myThermalNoise(T, B);
 Interference = 0;
 P_R = fromdB(P_R_dB);
 SINR = mySINR_dB(P_R, Interference, Noise);
 figure
-plot(d, SINR,'linewidth',1), 
+plot(d, SINR,'linewidth',1),
 xlabel('distance(m)'), ylabel( 'SINR(dB)'),
 title('Figure 2-2')
